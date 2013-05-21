@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sdhery.modules.user.dao.impl.SysUserDao">
+
+    <resultMap id="BaseResultMap" type="com.sdhery.modules.user.domain.SysUser">
+        <id column="SYS_USER_ID" property="sysUserId"/>
+        <id column="LOGIN_ID" property="loginId"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">SYS_USER_ID,LOGIN_ID</sql>
+
+    <insert id="insert" parameterType="com.sdhery.modules.user.domain.SysUser">
+        insert into sys_user(SYS_USER_ID) values (#{sysUserId})
+    </insert>
+
+    <select id="getById" resultMap="BaseResultMap" resultType="java.lang.Integer">
+	  	SELECT <include refid="Base_Column_List" /> FROM sys_user where SYS_USER_ID = #{id}
+	</select>
+
+    <update id="update" parameterType="com.sdhery.modules.user.domain.SysUser">
+        UPDATE sys_user where SYS_USER_ID = #{sysUserId}
+    </update>
+
+    <delete id="deleteById" parameterType="java.lang.Integer">DELETE FROM sys_user WHERE SYS_USER_ID = #{id}</delete>
+
+    <select id="getSysUserByLoginId" resultMap="BaseResultMap" resultType="java.lang.String">
+        SELECT <include refid="Base_Column_List" /> FROM sys_user where LOGIN_ID = #{loginId}
+    </select>
+</mapper>
