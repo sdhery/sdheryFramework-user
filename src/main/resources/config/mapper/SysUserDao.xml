@@ -5,12 +5,14 @@
     <resultMap id="BaseResultMap" type="com.sdhery.modules.user.domain.SysUser">
         <id column="SYS_USER_ID" property="sysUserId"/>
         <id column="LOGIN_ID" property="loginId"/>
+        <id column="PASSWORD_HASH" property="passwordHash"/>
+        <id column="RANDOM" property="random"/>
     </resultMap>
 
-    <sql id="Base_Column_List">SYS_USER_ID,LOGIN_ID</sql>
+    <sql id="Base_Column_List">SYS_USER_ID,LOGIN_ID,PASSWORD_HASH,RANDOM</sql>
 
     <insert id="insert" parameterType="com.sdhery.modules.user.domain.SysUser">
-        insert into sys_user(SYS_USER_ID) values (#{sysUserId})
+        insert into sys_user(SYS_USER_ID) values (#{sysUserId},#{loginId},#{passwordHash},#{random})
     </insert>
 
     <select id="getById" resultMap="BaseResultMap" resultType="java.lang.Integer">

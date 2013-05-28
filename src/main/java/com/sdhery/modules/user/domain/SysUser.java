@@ -12,6 +12,8 @@ import com.sdhery.core.domain.BaseEntity;
 public class SysUser extends BaseEntity {
     Integer sysUserId;
     String loginId;
+    String passwordHash;
+    String random;
 
     public Integer getSysUserId() {
         return sysUserId;
@@ -27,5 +29,21 @@ public class SysUser extends BaseEntity {
 
     public void setLoginId(String loginId) {
         this.loginId = loginId;
+    }
+
+    public String getPasswordHash() {
+        return passwordHash;
+    }
+
+    public void setPasswordHash(String passwordHash) {
+        this.passwordHash = passwordHash;
+    }
+
+    public String getRandom() {
+        return random;
+    }
+
+    public void setRandom(String random) {
+        this.random = random;
     }
 }

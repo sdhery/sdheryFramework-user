@@ -12,4 +12,10 @@ import com.sdhery.modules.user.domain.SysUser;
  */
 public interface ISysUserService extends IBaseService<SysUser,Integer>{
     SysUser getSysUserByLoginId(String loginId);
+
+    String getRealLoginKey(String fieldValue);
+
+    SysUser getSysUserByKey(String key);
+
+    SysUser getSysUserBySysUserId(int sysUserId);
 }
