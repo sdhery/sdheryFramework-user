@@ -1,3 +1,4 @@
+import com.sdhery.core.service.ISysObjectKeyService;
 import com.sdhery.modules.user.domain.SysUser;
 import com.sdhery.modules.user.service.ISysUserService;
 import org.junit.Test;
@@ -16,15 +17,16 @@ import javax.annotation.Resource;
  * To change this template use File | Settings | File Templates.
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = "classpath:config/spring/*.xml")
+@ContextConfiguration(locations = "classpath*:config/spring/*.xml")
 public class UserTest extends AbstractJUnit4SpringContextTests {
     @Resource
     private ISysUserService userService;
 
+
     @Test
     public void testRun() {
         try {
-            System.out.println("----"+userService.getSysUserByLoginId("root"));
+            System.out.println("----"+userService.getSysUserByKey("root"));
         } catch (Exception e) {
             e.printStackTrace();
         }

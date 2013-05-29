@@ -1,6 +1,7 @@
 package com.sdhery.modules.user.service.impl;
 
 import com.sdhery.core.dao.EntityDao;
+import com.sdhery.core.helper.CoreServiceManager;
 import com.sdhery.core.service.ISysObjectKeyService;
 import com.sdhery.core.service.impl.BaseService;
 import com.sdhery.modules.user.dao.ISysUserDao;
@@ -39,6 +40,7 @@ public class SysUserService extends BaseService<SysUser, Integer> implements ISy
         SysUser sysUser = null;
         try {
             String sysObjectKey = getRealLoginKey(key);
+            String value = CoreServiceManager.sysObjectKeyService.getById(sysObjectKey).getSysObjectKeyValue();
         } catch (Exception e) {
             e.printStackTrace();
         }
