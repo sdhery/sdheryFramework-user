@@ -14,7 +14,7 @@ import org.springframework.stereotype.Repository;
  * To change this template use File | Settings | File Templates.
  */
 
-@Repository
+
 public class SysUserDao  extends BaseMybatisDao<SysUser, Integer> implements ISysUserDao{
     public SysUser getSysUserByLoginId(String loginId){
         return getSqlSession().selectOne(SysUserDao.class.getName() + ".getSysUserByLoginId", loginId);
