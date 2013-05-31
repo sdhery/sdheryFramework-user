@@ -1,12 +1,14 @@
 package com.sdhery.modules.user.service.impl;
 
 import com.sdhery.core.dao.EntityDao;
+import com.sdhery.core.domain.SysObjectKey;
 import com.sdhery.core.helper.CoreServiceManager;
 import com.sdhery.core.service.ISysObjectKeyService;
 import com.sdhery.core.service.impl.BaseService;
 import com.sdhery.modules.user.dao.ISysUserDao;
 import com.sdhery.modules.user.domain.SysUser;
 import com.sdhery.modules.user.service.ISysUserService;
+import org.apache.commons.lang.math.NumberUtils;
 
 /**
  * Created with IntelliJ IDEA.
@@ -39,8 +41,12 @@ public class SysUserService extends BaseService<SysUser, Integer> implements ISy
     public SysUser getSysUserByKey(String key) {
         SysUser sysUser = null;
         try {
-            String sysObjectKey = getRealLoginKey(key);
-            String value = CoreServiceManager.sysObjectKeyService.getById(sysObjectKey).getSysObjectKeyValue();
+            key = getRealLoginKey(key);
+            SysObjectKey sysObjectKey = CoreServiceManager.sysObjectKeyService.getById(key);
+            if (sysObjectKey != null) {
+                int sysUserId = NumberUtils.toInt(sysObjectKey.getSysObjectKeyValue());
+                sysUser = getSysUserBySysUserId(sysUserId);
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }
