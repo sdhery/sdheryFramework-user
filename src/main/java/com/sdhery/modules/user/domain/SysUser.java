@@ -14,8 +14,8 @@ public class SysUser extends BaseEntity {
     String loginId;
     String passwordHash;
     String random;
-    Integer isAdmin;
-    Integer state;
+    Integer isAdmin;//0普通会员1管理员
+    Integer state;//0激活1未激活
 
     public Integer getSysUserId() {
         return sysUserId;

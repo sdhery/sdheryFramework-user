@@ -7,9 +7,11 @@
         <id column="LOGIN_ID" property="loginId"/>
         <id column="PASSWORD_HASH" property="passwordHash"/>
         <id column="RANDOM" property="random"/>
+        <id column="IS_ADMIN" property="isAdmin"/>
+        <id column="STATE" property="state"/>
     </resultMap>
 
-    <sql id="Base_Column_List">SYS_USER_ID,LOGIN_ID,PASSWORD_HASH,RANDOM</sql>
+    <sql id="Base_Column_List">SYS_USER_ID,LOGIN_ID,PASSWORD_HASH,RANDOM,IS_ADMIN,STATE</sql>
 
     <insert id="insert" parameterType="com.sdhery.modules.user.domain.SysUser">
         insert into sys_user(SYS_USER_ID) values (#{sysUserId},#{loginId},#{passwordHash},#{random})
