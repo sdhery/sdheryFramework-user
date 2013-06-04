@@ -14,6 +14,8 @@ public class SysUser extends BaseEntity {
     String loginId;
     String passwordHash;
     String random;
+    Integer isAdmin;
+    Integer state;
 
     public Integer getSysUserId() {
         return sysUserId;
@@ -45,5 +47,21 @@ public class SysUser extends BaseEntity {
 
     public void setRandom(String random) {
         this.random = random;
+    }
+
+    public Integer getIsAdmin() {
+        return isAdmin;
+    }
+
+    public void setIsAdmin(Integer admin) {
+        isAdmin = admin;
+    }
+
+    public Integer getState() {
+        return state;
+    }
+
+    public void setState(Integer state) {
+        this.state = state;
     }
 }
