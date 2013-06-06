@@ -1,7 +1,7 @@
-package com.sdhery.modules.user.dao;
+package com.sdhery.module.user.dao;
 
-import com.sdhery.core.dao.EntityDao;
-import com.sdhery.modules.user.domain.SysUser;
+import com.sdhery.module.core.dao.EntityDao;
+import com.sdhery.module.user.domain.SysUser;
 
 /**
  * Created with IntelliJ IDEA.

@@ -1,14 +1,14 @@
-package com.sdhery.modules.user.service.impl;
+package com.sdhery.module.user.service.impl;
 
-import com.sdhery.core.dao.EntityDao;
-import com.sdhery.core.domain.SysObjectKey;
-import com.sdhery.core.helper.CoreServiceManager;
-import com.sdhery.core.service.ISysObjectKeyService;
-import com.sdhery.core.service.impl.BaseService;
-import com.sdhery.core.util.DigestUtil;
-import com.sdhery.modules.user.dao.ISysUserDao;
-import com.sdhery.modules.user.domain.SysUser;
-import com.sdhery.modules.user.service.ISysUserService;
+
+import com.sdhery.module.core.dao.EntityDao;
+import com.sdhery.module.core.domain.SysObjectKey;
+import com.sdhery.module.core.helper.CoreServiceManager;
+import com.sdhery.module.core.service.impl.BaseService;
+import com.sdhery.module.core.util.DigestUtil;
+import com.sdhery.module.user.dao.ISysUserDao;
+import com.sdhery.module.user.domain.SysUser;
+import com.sdhery.module.user.service.ISysUserService;
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.lang.math.NumberUtils;
 

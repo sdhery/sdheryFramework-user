@@ -1,10 +1,8 @@
-package com.sdhery.modules.user.dao.impl;
+package com.sdhery.module.user.dao.impl;
 
-import com.sdhery.core.dao.impl.BaseMybatisDao;
-import com.sdhery.modules.user.dao.ISysUserDao;
-import com.sdhery.modules.user.domain.SysUser;
-import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Repository;
+import com.sdhery.module.core.dao.impl.BaseMybatisDao;
+import com.sdhery.module.user.dao.ISysUserDao;
+import com.sdhery.module.user.domain.SysUser;
 
 /**
  * Created with IntelliJ IDEA.

@@ -1,6 +1,7 @@
-package com.sdhery.modules.user.domain;
+package com.sdhery.module.user.domain;
 
-import com.sdhery.core.domain.BaseEntity;
+
+import com.sdhery.module.core.domain.BaseEntity;
 
 /**
  * Created with IntelliJ IDEA.

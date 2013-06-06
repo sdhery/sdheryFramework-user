@@ -1,7 +1,8 @@
-package com.sdhery.modules.user.service;
+package com.sdhery.module.user.service;
 
-import com.sdhery.core.service.IBaseService;
-import com.sdhery.modules.user.domain.SysUser;
+
+import com.sdhery.module.core.service.IBaseService;
+import com.sdhery.module.user.domain.SysUser;
 
 /**
  * Created with IntelliJ IDEA.

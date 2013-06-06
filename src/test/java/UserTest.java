@@ -1,6 +1,4 @@
-import com.sdhery.core.service.ISysObjectKeyService;
-import com.sdhery.modules.user.domain.SysUser;
-import com.sdhery.modules.user.service.ISysUserService;
+import com.sdhery.module.user.service.ISysUserService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
