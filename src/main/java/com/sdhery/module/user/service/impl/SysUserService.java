@@ -61,6 +61,14 @@ public class SysUserService extends BaseService<SysUser, Integer> implements ISy
         return sysUserDao.getById(sysUserId);
     }
 
+    public int loginResult(String key, String password, int target) throws Exception {
+        SysUser user = getSysUserByKey(key);
+        if (user == null) {
+            return ISysUserService.NOT_USER;
+        }
+        return findUser(user, password, target);
+    }
+
     protected int findUser(SysUser sysUser, String password, int target) throws NoSuchAlgorithmException {
         int isAdmin = sysUser.getIsAdmin();
         if (target == ISysUserService.TARGET_SYSTEM) {

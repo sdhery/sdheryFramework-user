@@ -39,8 +39,10 @@ public interface ISysUserService extends IBaseService<SysUser, Integer> {
     /**
      * 用户类型标记
      */
-    public static final int USERTYPE_ISADMIN_NO = 0; //普通会员；
-    public static final int USERTYPE_ISADMIN_YES = 1; //系统管理员；
+    public static final int USERTYPE_ISADMIN_NO = 0; //普通会员
+    public static final int USERTYPE_ISADMIN_YES = 1; //系统管理员
+
+    public static final int NULL_SYSUSERID = -1;//无效的用户ID
 
     SysUser getSysUserByLoginId(String loginId);
 
@@ -49,4 +51,6 @@ public interface ISysUserService extends IBaseService<SysUser, Integer> {
     SysUser getSysUserByKey(String key);
 
     SysUser getSysUserBySysUserId(int sysUserId);
+
+    int loginResult(String key, String password, int target) throws Exception;
 }
