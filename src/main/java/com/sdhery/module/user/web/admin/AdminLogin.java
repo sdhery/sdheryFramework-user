@@ -1,5 +1,6 @@
 package com.sdhery.module.user.web.admin;
 
+import com.sdhery.module.user.service.ISysUserService;
 import com.sdhery.module.user.vo.SysUserVo;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -18,6 +19,7 @@ public class AdminLogin {
 
     @RequestMapping(value = "/admin/loginOK")
     public String loginOk(ModelMap modelMap, SysUserVo sysUserVo) {
+        int result = userService.loginResult(sysUserVo.getLoginId(), sysUserVo.getPassword(), ISysUserService.TARGET_SYSTEM);
         return result;
     }
 }
