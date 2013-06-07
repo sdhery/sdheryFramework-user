@@ -1,5 +1,7 @@
 package com.sdhery.module.user.web.admin;
 
+import com.sdhery.module.core.web.BaseController;
+import com.sdhery.module.user.helper.SysUserServiceManager;
 import com.sdhery.module.user.service.ISysUserService;
 import com.sdhery.module.user.vo.SysUserVo;
 import org.springframework.stereotype.Controller;
@@ -14,12 +16,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * To change this template use File | Settings | File Templates.
  */
 @Controller
-public class AdminLogin {
+public class AdminLogin extends BaseController {
     String result;
 
     @RequestMapping(value = "/admin/loginOK")
     public String loginOk(ModelMap modelMap, SysUserVo sysUserVo) {
-        int result = userService.loginResult(sysUserVo.getLoginId(), sysUserVo.getPassword(), ISysUserService.TARGET_SYSTEM);
-        return result;
+        int result = 0;
+        try {
+            result = SysUserServiceManager.sysUserService.loginResult(sysUserVo.getLoginId(), sysUserVo.getPassword(), ISysUserService.TARGET_SYSTEM);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return "";
     }
 }

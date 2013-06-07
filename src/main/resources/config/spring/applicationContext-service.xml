@@ -13,4 +13,8 @@
         http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
     ">
     <bean id="sysUserService" class="com.sdhery.module.user.service.impl.SysUserService" p:sysUserDao-ref="sysUserDao"/>
+
+    <bean id="sysUserServiceManager" class="com.sdhery.module.user.helper.SysUserServiceManager">
+        <property name="sysUserService" ref="sysUserService"/>
+    </bean>
 </beans>
