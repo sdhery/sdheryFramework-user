@@ -17,16 +17,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 @Controller
 public class AdminLogin extends BaseController {
-    String result;
 
     @RequestMapping(value = "/admin/loginOK")
-    public String loginOk(ModelMap modelMap, SysUserVo sysUserVo) {
-        int result = 0;
+    public void loginOk(ModelMap modelMap, SysUserVo sysUserVo) {
         try {
-            result = SysUserServiceManager.sysUserService.loginResult(sysUserVo.getLoginId(), sysUserVo.getPassword(), ISysUserService.TARGET_SYSTEM);
+            int result = SysUserServiceManager.sysUserService.loginResult(sysUserVo.getLoginId(), sysUserVo.getPassword(), ISysUserService.TARGET_SYSTEM);
+            if(result==ISysUserService.LOGIN_SUCCESSFUL){
+                setSuccess(modelMap);
+            }else{
+                setFailure(modelMap);
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return "";
     }
 }
