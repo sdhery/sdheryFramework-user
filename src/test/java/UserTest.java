@@ -1,3 +1,4 @@
+import com.sdhery.module.helper.ServiceManager;
 import com.sdhery.module.user.service.ISysUserService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -17,14 +18,12 @@ import javax.annotation.Resource;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = "classpath*:config/spring/*.xml")
 public class UserTest extends AbstractJUnit4SpringContextTests {
-    @Resource
-    private ISysUserService userService;
 
 
     @Test
     public void testRun() {
         try {
-            System.out.println("----"+userService.getSysUserByKey("root"));
+            System.out.println("----" + ServiceManager.sysUserService.getSysUserByKey("root"));
         } catch (Exception e) {
             e.printStackTrace();
         }

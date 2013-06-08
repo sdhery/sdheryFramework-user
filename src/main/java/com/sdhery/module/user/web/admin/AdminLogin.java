@@ -1,7 +1,7 @@
 package com.sdhery.module.user.web.admin;
 
 import com.sdhery.module.core.web.BaseController;
-import com.sdhery.module.user.helper.SysUserServiceManager;
+import com.sdhery.module.helper.ServiceManager;
 import com.sdhery.module.user.service.ISysUserService;
 import com.sdhery.module.user.vo.SysUserVo;
 import org.springframework.stereotype.Controller;
@@ -21,7 +21,7 @@ public class AdminLogin extends BaseController {
     @RequestMapping(value = "/admin/loginOK")
     public void loginOk(ModelMap modelMap, SysUserVo sysUserVo) {
         try {
-            int result = SysUserServiceManager.sysUserService.loginResult(sysUserVo.getLoginId(), sysUserVo.getPassword(), ISysUserService.TARGET_SYSTEM);
+            int result = ServiceManager.sysUserService.loginResult(sysUserVo.getLoginId(), sysUserVo.getPassword(), ISysUserService.TARGET_SYSTEM);
             if(result==ISysUserService.LOGIN_SUCCESSFUL){
                 setSuccess(modelMap);
             }else{
