@@ -22,6 +22,7 @@ public class AdminLogin extends BaseController {
     public void loginOk(ModelMap modelMap, SysUserVo sysUserVo) {
         try {
             int result = ServiceManager.sysUserService.loginResult(sysUserVo.getLoginId(), sysUserVo.getPassword(), ISysUserService.TARGET_SYSTEM);
+            modelMap.put("result",result);
             if(result==ISysUserService.LOGIN_SUCCESSFUL){
                 setSuccess(modelMap);
             }else{
