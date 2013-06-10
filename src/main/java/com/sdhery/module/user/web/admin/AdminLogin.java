@@ -5,7 +5,7 @@ import com.sdhery.module.helper.MessageSourceManager;
 import com.sdhery.module.helper.ServiceManager;
 import com.sdhery.module.user.domain.SysUser;
 import com.sdhery.module.user.service.ISysUserService;
-import com.sdhery.module.user.util.CookieUtil;
+import com.sdhery.module.user.util.SysUserCookieUtil;
 import com.sdhery.module.user.vo.SysUserVo;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -33,7 +33,7 @@ public class AdminLogin extends BaseController {
             if(result==ISysUserService.LOGIN_SUCCESSFUL){
                 setSuccess(modelMap);
                 SysUser sysUser = ServiceManager.sysUserService.getSysUserByKey(sysUserVo.getLoginId());
-                CookieUtil.addAdminCookie(sysUser, request, response);
+                SysUserCookieUtil.addAdminCookie(sysUser, request, response);
             }else{
                 modelMap.put("result", MessageSourceManager.getMessage("login.error." + result, request));
                 setFailure(modelMap);

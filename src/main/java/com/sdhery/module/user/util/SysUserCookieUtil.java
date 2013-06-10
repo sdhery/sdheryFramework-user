@@ -20,7 +20,7 @@ import java.util.Date;
  * Time: 上午11:21
  * To change this template use File | Settings | File Templates.
  */
-public class CookieUtil {
+public class SysUserCookieUtil {
     public static final String memberLoginKey = "memberInfo";
     public static final String adminLoginKey = "adminInfo";
 
