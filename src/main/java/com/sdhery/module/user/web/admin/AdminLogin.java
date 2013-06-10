@@ -32,6 +32,8 @@ public class AdminLogin extends BaseController {
             int result = ServiceManager.sysUserService.loginResult(sysUserVo.getLoginId(), sysUserVo.getPassword(), ISysUserService.TARGET_SYSTEM);
             if(result==ISysUserService.LOGIN_SUCCESSFUL){
                 setSuccess(modelMap);
+                SysUser sysUser = ServiceManager.sysUserService.getSysUserByKey(sysUserVo.getLoginId());
+                CookieUtil.addAdminCookie(sysUser, request, response);
             }else{
                 modelMap.put("result", MessageSourceManager.getMessage("login.error." + result, request));
                 setFailure(modelMap);
