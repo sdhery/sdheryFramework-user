@@ -2,11 +2,10 @@
 
 <taglib xmlns="http://java.sun.com/xml/ns/j2ee"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/webjsptaglibrary_2_0.xsd"
         version="2.0">
     <tlib-version>1.0</tlib-version>
-    <short-name>wlm</short-name>
-    <uri>http://www.sd.com/sysUser</uri>
+    <short-name>sysUser-tags</short-name>
+    <uri>http://sysUser-tags</uri>
 
     <function>
         <name>getAdminSysUser</name>
