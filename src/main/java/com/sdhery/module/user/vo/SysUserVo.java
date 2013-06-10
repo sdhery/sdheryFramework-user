@@ -1,6 +1,7 @@
 package com.sdhery.module.user.vo;
 
 import com.sdhery.module.user.domain.SysUser;
+import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 
 /**
  * Created with IntelliJ IDEA.

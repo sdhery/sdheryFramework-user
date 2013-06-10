@@ -2,6 +2,8 @@ package com.sdhery.module.user.domain;
 
 
 import com.sdhery.module.core.domain.BaseEntity;
+import org.codehaus.jackson.annotate.JsonAutoDetect;
+import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 
 /**
  * Created with IntelliJ IDEA.
@@ -10,6 +12,7 @@ import com.sdhery.module.core.domain.BaseEntity;
  * Time: 下午5:11
  * To change this template use File | Settings | File Templates.
  */
+@JsonIgnoreProperties (value = { "passwordHash" ,  "random","isAdmin","state" })
 public class SysUser extends BaseEntity {
     Integer sysUserId;
     String loginId;
