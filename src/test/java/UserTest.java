@@ -2,6 +2,7 @@ import com.sdhery.module.helper.ServiceManager;
 import com.sdhery.module.user.service.ISysUserService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.AbstractJUnit4SpringContextTests;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
@@ -18,12 +19,13 @@ import javax.annotation.Resource;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = "classpath*:config/spring/*.xml")
 public class UserTest extends AbstractJUnit4SpringContextTests {
-
+    @Autowired
+    ISysUserService sysUserService;
 
     @Test
     public void testRun() {
         try {
-            System.out.println("----" + ServiceManager.sysUserService.getSysUserByKey("root"));
+            System.out.println("----" +sysUserService.getSysUserByKey("root"));
         } catch (Exception e) {
             e.printStackTrace();
         }
